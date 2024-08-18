@@ -1,0 +1,20 @@
+<h1>Employees</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Employee Name</th>
+            <th>Total Hours</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+            <tr *ngFor="let employee of employees" [ngStyle]="{'background-color': employee.hours < 100 ? '#e94f58' : 'transparent'}">
+              <td>{{ employee.name }}</td>
+              <td>{{ employee.hours }}</td>
+<!-- It has been taken into account that "null" values for names are treated as "Unknown". Additionally, where the start date is greater than the end date, resulting in negative time, is counted as 0 hours.-->
+<!-- Feedback: While debugging, I noticed that the start date in the API is labeled as "Star" instead of "Start." This could cause confusion and take up unnecessary time for future candidates as they try to identify the issue while solving the problem. It might be beneficial to correct this in the API to avoid potential delays. -->
+            </tr>
+
+    </tbody>
+</table>
+
