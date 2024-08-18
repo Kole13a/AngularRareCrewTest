@@ -1,2 +1,6 @@
 <app-employees-table></app-employees-table>
-<router-outlet></router-outlet>
+<div *ngIf="isBrowser">
+    <ng-container #chartContainer></ng-container>
+  </div>
+
+  
